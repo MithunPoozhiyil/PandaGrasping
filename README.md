@@ -23,12 +23,14 @@ An implementation of object grasping using Franka Panda Robot and Contact graspn
 ## Running
 Steps
 1. Start Camera
+
 Starting camera and making images and depth available in ros topics 
 ```
 roslaunch realsense2_camera rs_aligned_depth.launch tf_prefix:=_camera enable_pointcloud:=true
 ```
 
 2. Start Segmentation
+
 Using camera ros topics generation of segmentation masks (generated as ros topics) for grasp generation. 
 
 Navigate to UnseenObjectClustering folder
@@ -47,6 +49,7 @@ Start segmentation (parameter '0' represents GPU selection)
 This will start the segementation and outputs can be seen in Rviz. Also associated topics will be publishing the segmented images.
 
 3. Start Grasp generation
+
 To generate grasp positions (will start publisher) using the inputs from camera topics and segmentation topics. The script will be in ws_graspnet/src/contact_graspnet_ros/contact_graspnet/contact_graspnet folder
 ```
 python generate_grasp.py
